@@ -1,0 +1,19 @@
+type Query {
+    allPatients: [Patient]
+    patientById(id: ID!): Patient
+}
+
+type Mutation {
+    createPatient(input: PatientInput): Patient
+}
+
+type Patient {
+    id: ID!
+    name: String!
+    email: String
+}
+
+input PatientInput {
+    name: String!
+    email: String
+}
