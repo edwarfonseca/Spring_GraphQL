@@ -1,0 +1,21 @@
+type Paciente {
+    id: ID!
+    name: String!
+    email: String!
+}
+
+input PacienteInput {
+    name: String!
+    email: String!
+}
+
+type Query {
+    getPacientes: [Paciente!]!
+    getPacienteById(id: ID!): Paciente
+}
+
+type Mutation {
+    createPaciente(input: PacienteInput!): Paciente!
+    updatePaciente(id: ID!, input: PacienteInput!): Paciente!
+    deletePaciente(id: ID!): Boolean!
+}
